@@ -1,0 +1,27 @@
+<html>
+  <body>
+    <h1>Add user</h1>
+    <form method="POST" action="/">
+      <input type="text" name="user">
+      <input type="submit" value="Add">
+    </form>
+
+    <h1>Names</h1>
+    <table>
+      {% for name in namess %}
+        <tr>
+          <td>
+            {{name.names}}
+          </td>
+
+          <td>
+            <form method="POST" action="./delete" style="display: inline">
+              <input type="hidden" value="{{name.names}}" name="title">
+              <input type="submit" value="Delete">
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
